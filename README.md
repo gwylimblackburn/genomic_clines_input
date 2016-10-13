@@ -1,5 +1,7 @@
 # genomic_clines_input
-R scripts for translating SNP data into input files for genomic clines analysis with BGC (Gompert and Buerkle 2011), written by Blackburn et al. 2017.
+R scripts written by Blackburn et al. 2017 for translating SNP data into input files for BGC (Gompert and Buerkle 2011) genomic clines analysis.
+
+Notes:
 
 The script assumes zero genotype error (see Gompert and Buerkle 2012).
 
