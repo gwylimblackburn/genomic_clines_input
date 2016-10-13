@@ -14,7 +14,7 @@ axd_samples_allele_count1 <- data.frame(ifelse(axd_genotypes == 0, "2",
                                                         ifelse(axd_genotypes == 2,"0","-9"))))
 axd_samples_allele_count1$allele <- as.character(1)
 axd_samples_allele_count1$individual <- as.character(1:nrow(axd_samples_allele_count1))
-axd_samples_allele_count1$id <- as.character(axd_locus$id)
+axd_samples_allele_count1$locus_id <- as.character(axd_locus$locus_id)
 axd_samples_allele_count1$location <- axd_locus$location
 axd_samples_allele_count1 <- axd_samples_allele_count1[,c((length(axd_samples_allele_count1)-3):length(axd_samples_allele_count1),1:length(axd_genotypes))]
 
@@ -23,7 +23,7 @@ axd_samples_allele_count2 <- data.frame(ifelse(axd_genotypes == 0, "0",
                                                         ifelse(axd_genotypes == 2,"2","-9"))))
 axd_samples_allele_count2$allele <- as.character(2)
 axd_samples_allele_count2$individual <- as.character(1:nrow(axd_samples_allele_count2))
-axd_samples_allele_count2$id <- as.character(axd_locus$id)
+axd_samples_allele_count2$locus_id <- as.character(axd_locus$locus_id)
 axd_samples_allele_count2$location <- axd_locus$location
 axd_samples_allele_count2 <- axd_samples_allele_count2[,c((length(axd_samples_allele_count2)-3):length(axd_samples_allele_count2),1:length(axd_genotypes))]
 
