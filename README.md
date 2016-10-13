@@ -1,5 +1,9 @@
 # genomic_cline_input
-R script to translate SNP data from a single admixed population into an input file for genomic clines software BGC (Gompert and Buerkle 2011). The script assumes zero genotype error (see Gompert and Buerkle 2012). For script use, please cite Blackburn et al. 2017.
+R scripts for translating SNP data into input files for genomic clines analysis with BGC (Gompert and Buerkle 2011), written by Blackburn et al. 2017.
+
+The script assumes zero genotype error (see Gompert and Buerkle 2012).
+
+Example files are provided for an admixed population (n=100 individuals) and two parental populations (n=30 individuals each), each scored for 10 SNPs.
 
 
 References:
