@@ -4,7 +4,7 @@ library(dplyr)
 name_path <- "example_input/"
 
 ### Access genetic information
-sample_data <- read.table(paste0(as.character(name_path), "sample_data.txt", sep=""), header=TRUE)
+sample_data <- read.table(paste0(as.character(name_path), "axd_sample_data.txt", sep=""), header=TRUE)
 axd_genotypes <- subset(sample_data, select = (c(2:length(sample_data))))
 axd_locus <- subset(sample_data, select = "locus_id")
 
@@ -121,5 +121,5 @@ admixlist$count <- NULL
 admixlist$marker <- NULL
 
 # Write to file.
-write.table(admixlist, paste(name_path, "admixlist.txt", sep=""), col.names=FALSE, row.names=FALSE, quote = FALSE, sep = " ")
+write.table(admixlist, paste(name_path, "axd_in.txt", sep=""), col.names=FALSE, row.names=FALSE, quote = FALSE, sep = " ")
 
