@@ -5,7 +5,7 @@ Notes:
 
 The script assumes zero genotype error (see Gompert and Buerkle 2012).
 
-Example files are provided for an admixed population (n=100 individuals) and two parental populations (n=30 individuals each), each scored for 10 SNPs.
+Example files are provided for a fake admixed population (n=100 individuals) and two fake parental populations (n=30 individuals each), each scored for 10 SNPs.
 
 
 References:
