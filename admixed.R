@@ -1,12 +1,14 @@
 library(dplyr)
 
-### Set path.
+### Access data.
+
+# Set path.
 name_path <- "example_input/"
 
-### Access genetic information
-sample_data <- read.table(paste0(as.character(name_path), "axd_sample_data.txt", sep=""), header=TRUE)
-axd_genotypes <- subset(sample_data, select = (c(2:length(sample_data))))
-axd_locus <- subset(sample_data, select = "locus_id")
+# Read sample data files.
+axd_sample_data <- read.table(paste0(as.character(name_path), "axd_sample_data.txt", sep=""), header=TRUE)
+axd_genotypes <- subset(axd_sample_data, select = (c(2:length(axd_sample_data))))
+axd_locus <- subset(axd_sample_data, select = "sample_id")
 
 ### Creat allele objects, based on the genotypes in "axd_genotypes".
 axd_samples_allele_count1 <- data.frame(ifelse(axd_genotypes == 0, "2",
@@ -14,7 +16,7 @@ axd_samples_allele_count1 <- data.frame(ifelse(axd_genotypes == 0, "2",
                                                         ifelse(axd_genotypes == 2,"0","-9"))))
 axd_samples_allele_count1$allele <- as.character(1)
 axd_samples_allele_count1$individual <- as.character(1:nrow(axd_samples_allele_count1))
-axd_samples_allele_count1$locus_id <- as.character(axd_locus$locus_id)
+axd_samples_allele_count1$sample_id <- as.character(axd_locus$sample_id)
 axd_samples_allele_count1$location <- axd_locus$location
 axd_samples_allele_count1 <- axd_samples_allele_count1[,c((length(axd_samples_allele_count1)-3):length(axd_samples_allele_count1),1:length(axd_genotypes))]
 
@@ -23,7 +25,7 @@ axd_samples_allele_count2 <- data.frame(ifelse(axd_genotypes == 0, "0",
                                                         ifelse(axd_genotypes == 2,"2","-9"))))
 axd_samples_allele_count2$allele <- as.character(2)
 axd_samples_allele_count2$individual <- as.character(1:nrow(axd_samples_allele_count2))
-axd_samples_allele_count2$locus_id <- as.character(axd_locus$locus_id)
+axd_samples_allele_count2$sample_id <- as.character(axd_locus$sample_id)
 axd_samples_allele_count2$location <- axd_locus$location
 axd_samples_allele_count2 <- axd_samples_allele_count2[,c((length(axd_samples_allele_count2)-3):length(axd_samples_allele_count2),1:length(axd_genotypes))]
 
@@ -48,7 +50,8 @@ axd_samples_allele_only_count2 <- axd_samples_allele_only_count2[,c(ncol(axd_sam
 
 ### Create genotypes in BGC format.
 
-# Isolate each individual's genotypes and assign it to a name "individual_i".
+# Isolate each individual's genotype, assign it a name "individual_i", and
+# combine the data for all individuals.
 indivtally <- nrow(axd_genotypes)
 
 for(i in 1:indivtally) {
@@ -57,7 +60,6 @@ for(i in 1:indivtally) {
         assign(paste0("individual_axd_", i), left_join(allele_1, allele_2, "marker"))
 }
 
-# Append data for all individuals.
 admixlist_raw <- individual_axd_1
 
 for(i in 2:indivtally){
@@ -66,7 +68,7 @@ for(i in 2:indivtally){
 names(admixlist_raw)[names(admixlist_raw) == "1.x"] <- "x"
 names(admixlist_raw)[names(admixlist_raw) == "1.y"] <- "y"
 
-# Sort output 
+# Sort the output.
 admixlist_sorted <- admixlist_raw[order(admixlist_raw$marker),]
 rownames(admixlist_sorted) <- 1:nrow(admixlist_sorted)
 admixlist_sorted[,1] <- as.character(admixlist_sorted[,1])

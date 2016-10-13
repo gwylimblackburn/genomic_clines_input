@@ -1,4 +1,4 @@
-locus_id locus_01 locus_02 locus_03 locus_04 locus_05 locus_06 locus_07 locus_08 locus_09 locus_10
+sample_id locus_01 locus_02 locus_03 locus_04 locus_05 locus_06 locus_07 locus_08 locus_09 locus_10
 1 0 0 0 0 2 0 1 0 0 0
 2 0 0 0 0 0 0 0 0 0 0
 3 0 0 0 0 0 0 0 1 0 0
