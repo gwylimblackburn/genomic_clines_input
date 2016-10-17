@@ -3,7 +3,7 @@ library(dplyr)
 ### Access data.
 
 # Set path.
-name_path <- "example_input/"
+name_path <- "path_leading_to_your_parental_input_files/"
 
 # Read sample data files.
 ptl0_sample_data <- read.table(paste0(name_path, "ptl0_sample_data.txt", sep=""), header=TRUE)
