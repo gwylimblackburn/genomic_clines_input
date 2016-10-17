@@ -3,7 +3,7 @@ library(dplyr)
 ### Access data.
 
 # Set path.
-name_path <- "path_leading_to_your_axd_sample_data_files/"
+name_path <- "path_leading_to_your_axd_sample_data_file/"
 
 # Read sample data files.
 axd_sample_data <- read.table(paste0(as.character(name_path), "axd_sample_data.txt", sep=""), header=TRUE)
