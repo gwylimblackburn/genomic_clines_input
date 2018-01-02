@@ -10,7 +10,7 @@ Example files are provided for a fake admixed population (n=100 individuals) and
 
 References:
 
-Blackburn G. S., Bryan M.T. Brunet, Kevin Muirhead, Michel Cusson, Catherine Béliveau, Roger C. Levesque, Lisa M. Lumley, and Felix A.H. Sperling. 2017. Distinct sources of gene flow produce contrasting population genetic dynamics at different range boundaries of a Choristoneura budworm. XXXX
+Blackburn G. S., Bryan M.T. Brunet, Kevin Muirhead, Michel Cusson, Catherine Béliveau, Roger C. Levesque, Lisa M. Lumley, and Felix A.H. Sperling. 2017. Distinct sources of gene flow produce contrasting population genetic dynamics at different range boundaries of a Choristoneura budworm. Mol. Ecol. DOI: 10.1111/mec.14386
 
 Gompert, Z., and C. A. Buerkle. 2011. Bayesian estimation of genomic clines. Mol. Ecol. 20:2111–2127
 
